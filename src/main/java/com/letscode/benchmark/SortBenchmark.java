@@ -14,6 +14,7 @@ public class SortBenchmark {
 
     @Benchmark
     @Fork(1)
+    @Warmup(iterations = 5)
     @Measurement(iterations = 5)
     @BenchmarkMode(Mode.AverageTime)
     public void benchSelectionSort() {
@@ -22,6 +23,7 @@ public class SortBenchmark {
 
     @Benchmark
     @Fork(1)
+    @Warmup(iterations = 5)
     @Measurement(iterations = 5)
     @BenchmarkMode(Mode.AverageTime)
     public void benchBubbleSort() {
