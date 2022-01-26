@@ -28,6 +28,21 @@ public class SelectionSort implements Sort {
             array[indMenorValor] = array[i];
             array[i] = menorValor;
         }
+        //complexidade de tempo
+        //n=1: 0
+        //n=2: 1
+        //n=3: 1 + 2
+        //n=4: 1 + 2 + 3
+        //n=5: 1 + 2 + 3 + 4
+        //n=N: 1 + 2 + 3 + 4 + ... + (N-1) -> soma de PA -> [(N-1)+1] * (N-1)/2 = N * (N-1)/2 = (N^2 - N)/2
+        //.: O(n^2)
+
+//Identificando a formula da soma de PA:
+//        soma(1 + 2 + 3) = (3 + 1) * 3/2 = 6
+//        soma(1 + 2 + 3 + 4) = (4 + 1) * 4/2 = 10
+//        soma(1 + 2 + 3 + 4 + 5) = (5 + 1) * 5/2 = 15
+//        soma(1 + 2 + 3 + 4 + 5 + 6) = (6 + 1) * 6/2 = 21
+//        soma(1 + 2 + 3 + ... + N) = (N + 1) * N/2
 
         return array;
     }
