@@ -31,10 +31,10 @@ public class SelectionSort implements Sort {
         //complexidade de tempo
         //n=1: 0
         //n=2: 1
-        //n=3: 1 + 2
-        //n=4: 1 + 2 + 3
-        //n=5: 1 + 2 + 3 + 4
-        //n=N: 1 + 2 + 3 + 4 + ... + (N-1) -> soma de PA -> [(N-1)+1] * (N-1)/2 = N * (N-1)/2 = (N^2 - N)/2
+        //n=3: 2 + 1
+        //n=4: 3 + 2 + 1
+        //n=5: 4 + 3 + 2 + 1
+        //n=N: (N-1) + (N-2) ... + 3 + 2 + 1 -> soma de PA -> [(N-1)+1] * (N-1)/2 = N * (N-1)/2 = (N^2 - N)/2
         //.: O(n^2)
 
 //Identificando a formula da soma de PA:
