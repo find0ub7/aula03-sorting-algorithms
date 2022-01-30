@@ -16,10 +16,10 @@ public class SelectionSort implements Sort {
         //...
 
         for (int i = 0; i < array.length; i++) {
-            int indMenorValor = i; //0, 1, 2, 3, ...
-            int menorValor = array[i]; //12
+            int indMenorValor = i; //0, 1, 2, 3, ...    N
+            int menorValor = array[i]; //12             N
 
-            for (int j = i + 1; j < array.length; j++) {
+            for (int j = i + 1; j < array.length; j++) { //j = 3 j < 4 -> 3 + 2 + 1
                 if (menorValor > array[j]) {
                     menorValor = array[j];
                     indMenorValor = j;
@@ -34,7 +34,9 @@ public class SelectionSort implements Sort {
         //length=3: 2 + 1
         //length=4: 3 + 2 + 1
         //length=5: 4 + 3 + 2 + 1
-        //length=N: (N-1) + (N-2) ... + 3 + 2 + 1 -> soma de PA -> [(N-1)+1] * (N-1)/2 = N * (N-1)/2 = (N^2 - N)/2
+        //length=6: 5 + 4 + 3 + 2 + 1
+        //length=7: 6 + 5 + 4 + 3 + 2 + 1
+        //length=N: (N-1) + (N-2) + ... + 3 + 2 + 1 -> soma de PA -> [(N-1)+1] * (N-1)/2 = N * (N-1)/2 = (N^2 - N)/2
         //.: O(n^2)
 
 //Identificando a formula da soma de PA:

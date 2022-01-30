@@ -13,6 +13,6 @@ public class BubbleSort implements Sort {
                 }
             }
         }
-        return array;
+        return array; //O(n^2)
     }
 }

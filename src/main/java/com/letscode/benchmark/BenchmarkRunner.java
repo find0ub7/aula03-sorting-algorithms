@@ -12,8 +12,8 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 public class BenchmarkRunner {
 
   public static void main(String[] args) throws Exception {
-    opcaoExecucaoUsandoBenchmarkMain(args);
-//        opcaoExecucaoUsandoRunnerComOpcoes();
+//    opcaoExecucaoUsandoBenchmarkMain(args);
+        opcaoExecucaoUsandoRunnerComOpcoes();
 //        benchmarkManual();
 
   }
@@ -24,7 +24,7 @@ public class BenchmarkRunner {
 
   private static void opcaoExecucaoUsandoRunnerComOpcoes() throws RunnerException {
     Options options = new OptionsBuilder()
-        .include(SortBenchmark.class.getSimpleName())
+        .include(ListBenchmark.class.getSimpleName())
         .build();
 
     new Runner(options).run();
@@ -35,9 +35,9 @@ public class BenchmarkRunner {
     QuickSort quickSort = new QuickSort();
 
     //warmup para executar o jit
-    for (int i = 0; i < 100; i++) {
-      quickSort.execute(array);
-    }
+//    for (int i = 0; i < 100; i++) {
+//      quickSort.execute(array);
+//    }
 
     //benchmark
     LocalDateTime start = LocalDateTime.now();
@@ -49,5 +49,7 @@ public class BenchmarkRunner {
     System.out.println(end);
 
     System.out.println("Tempo: " + start.until(end, ChronoUnit.MICROS));
+    //1106 micro segundos com aquecimento
+    //152268 micro segundos sem aquecimento
   }
 }

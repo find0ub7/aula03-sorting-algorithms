@@ -6,6 +6,8 @@ import java.util.function.Function;
 //Exemplo de um reader "generico" com close implicito no try-with-resources
 public class ScanReaderUtils {
 
+    private Scanner scanner = new Scanner(System.in);
+
     public String readString() {
         return read(Scanner::nextLine);
     }
@@ -18,11 +20,12 @@ public class ScanReaderUtils {
         return read(Scanner::nextFloat);
     }
 
+    public int[] readPairInt() {
+        return new int[]{readInt(), readInt()};
+    }
+
     private <T> T read(Function<Scanner, T> function) {
         T readValue;
-        try(Scanner scanner = new Scanner(System.in)) {
-            readValue = function.apply(scanner);
-        }//ao terminar o bloco de try, ele chama o scanner.close(); devido ao try-with-resources
-        return readValue;
+        return function.apply(scanner);
     }
 }
